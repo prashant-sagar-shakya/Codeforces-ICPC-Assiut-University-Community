@@ -24,21 +24,26 @@ void Solve()
 {
     ll n;
     cin >> n;
-    ll arr1[n], arr2[n];
-    for (ll i = 0; i < n; i++)
-        cin >> arr1[i];
-    for (ll i = 0; i < n; i++)
-        cin >> arr2[i];
+    ll arr[2 * n];
+    for (ll i = 0; i < 2 * n; i++)
+        cin >> arr[i];
+    ll Xor = 0;
+    for (ll i = 0; i < 2 * n; i++)
+        Xor = Xor ^ arr[i];
+    if (Xor)
+        cout << "no\n";
+    else
+        cout << "yes\n";
 }
 
 int main()
 {
     fastio();
-    int test_cases;
-    cin >> test_cases;
-    while (test_cases--)
-    {
-        Solve();
-    }
+    // int test_cases;
+    // cin >> test_cases;
+    // while (test_cases--)
+    // {
+    Solve();
+    // }
     return 0;
 }
